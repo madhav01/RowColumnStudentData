@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls.Native
+import RowColumnStudentData
 
 
 ApplicationWindow {
@@ -12,7 +13,7 @@ ApplicationWindow {
     visible: true
     title: qsTr("RowColumnTest")
 
-
-
-
+    MyBackend{
+        id:mybackend
+    }
 }
