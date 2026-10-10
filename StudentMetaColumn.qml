@@ -54,6 +54,7 @@ Rectangle{
                 Rectangle{
                     width: 44;height: 44
                     radius: 22
+                    color: "#6366f1"
                     anchors.verticalCenter: parent.verticalCenter
 
                     Text{
@@ -65,25 +66,26 @@ Rectangle{
                         color: "white"
                     }
                 }
-            }
-            //Name & Rector ID Stack
-            Column{
-                anchors.verticalCenter: parent.verticalCenter
-                spacing: 3
-                Text{
-                    text: (root.studentData && root.studentData.name)?root.studentData.name: "select Student a student"
-                    font.bold: true
-                    font.pixelSize: 15
-                    color: "#f8fafc"
-                }
+                //Name & Rector ID Stack
+                Column{
+                    anchors.verticalCenter: parent.verticalCenter
+                    spacing: 3
+                    Text{
+                        text: (root.studentData && root.studentData.name)?root.studentData.name: "select Student a student"
+                        font.bold: true
+                        font.pixelSize: 15
+                        color: "#f8fafc"
+                    }
 
-                Text{
-                    text: (root.studentData && root.studentData.name)?root.studentData.id: "-"
-                                                                       + " • "+(root.studentData && root.studentData.status? root.studentData.status:"Active");
-                    font.pixelSize: 11
-                    color:  "#94a3b8"
+                    Text{
+                        text: (root.studentData && root.studentData.name)?root.studentData.id: "-"
+                                                                           + " • "+(root.studentData && root.studentData.status? root.studentData.status:"Active");
+                        font.pixelSize: 11
+                        color:  "#94a3b8"
+                    }
                 }
             }
+
         }
         //2.academic performance card
         Rectangle{
@@ -173,28 +175,29 @@ Rectangle{
                 }
             }
         }
+        //4. INTERACTIVE ACCORDION TOGGLE BUTTON
+        Rectangle{
+            width: parent.width-(contentColumn.padding * 2)
+            height: 32
+            radius: 6
+            color: "#334155"
+
+            Text{
+                anchors.centerIn: parent
+                text: root.showDetails ? "Collapse Extra Details Details ▲":"Expand Extra Details ▼"
+                font.bold: true
+                font.pixelSize: 10
+                color: "#f8fafc"
+            }
+            MouseArea{
+                anchors.fill: parent
+                cursorShape: "PointingHandCursor"
+                onClicked: root.showDetails = !root.showDetails
+            }
+        }
 
     }
 
 
-    //4. INTERACTIVE ACCORDION TOGGLE BUTTON
-    Rectangle{
-        width: parent.width-(contentColumn.padding * 2)
-        height: 32
-        radius: 6
-        color: "#334155"
 
-        Text{
-            anchors.centerIn: parent
-            text: root.showDetails ? "Collapse Extra Details Details ▲":"Expand Extra Details ▼"
-            font.bold: true
-            font.pixelSize: 10
-            color: "#f8fafc"
-        }
-        MouseArea{
-            anchors.fill: parent
-            cursorShape: "PointingHandCursor"
-            onClicked: root.showDetails = !root.showDetails
-        }
-    }
 }
