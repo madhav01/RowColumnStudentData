@@ -23,6 +23,8 @@ qt_add_qml_module(appRowColumnStudentData
     QML_FILES
         Main.qml
         SOURCES mybackend.h mybackend.cpp
+        QML_FILES StudentRowItem.qml
+        QML_FILES StudentMetaColumn.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
