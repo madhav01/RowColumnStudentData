@@ -57,6 +57,7 @@ ApplicationWindow {
 
                         StudentRowItem {
                             studentData: modelData
+                            itemIndex:index
                             isSelected: mybackend.selectedStudent.id === modelData.id
                             onInspectClicked: function(id) {
                                 mybackend.selectStudent(id) // Calls C++!
@@ -67,6 +68,11 @@ ApplicationWindow {
             }
         }
 
-
+        // Right Half: Student Metadata Inspector (Column Positioner)
+        StudentMetaColumn {
+            width: parent.width * 0.45 - 16
+            height: parent.height
+            studentData: mybackend.selectedStudent // Binds to C++!
+        }
     }
 }

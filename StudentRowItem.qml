@@ -17,7 +17,9 @@ Rectangle{
     //Data properties passed from parent list
     property var studentData: ({})
     property bool isSelected: false
+    property int itemIndex: 0
     signal inspectClicked(int studentId)
+
 
     //full-card click area
     MouseArea{
@@ -61,7 +63,7 @@ Rectangle{
             Text{
                 anchors.centerIn: parent
                 // Positioner.index demo: 0-based index from positioner
-                text: (Positioner.index !== undefined?(Positioner.index+1): "")
+                text:  (root.itemIndex + 1)
                 font.bold: true
                 font.pixelSize: 11
                 color: Positioner.isFirstItem ? "#fef08a":"#94a3b8"
@@ -143,7 +145,7 @@ Rectangle{
 
             Text{
                 anchors.centerIn: parent
-                text: root.studentData.status==="Active"
+                text: root.studentData.status || "Active"
                 font.bold: true
                 font.pixelSize: 9
                 color: (root.studentData.status === "Active")?"#34d399": "#f472b6"

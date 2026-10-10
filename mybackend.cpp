@@ -18,10 +18,10 @@ void MyBackend::loadInitialMockData(){
     s1["gpa"] = 3.9;
 
     QVariantMap s2;
-    s2["id"] = 2;
-    s2["name"] = "Ravi";
-    s2["age"] = 24;
-    s2["department"] = "Computer Science";
+    s2["id"] = 3;
+    s2["name"] = "Akash";
+    s2["age"] = 23;
+    s2["department"] = "Electronics";
     s2["status"] = "Active";
     s2["gpa"] = 3.9;
 
