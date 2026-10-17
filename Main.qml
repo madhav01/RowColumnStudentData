@@ -37,7 +37,7 @@ ApplicationWindow {
                 text: "📋 Active Students List (Row Positioners)"
                 font.bold: true
                 font.pixelSize: 14
-                color: "#f8fafc"
+                color: "#171717"
             }
             //Scrollable list container
             Flickable{

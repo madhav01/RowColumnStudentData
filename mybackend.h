@@ -22,7 +22,7 @@ class MyBackend : public QObject
 public:
     explicit MyBackend(QObject *parent = nullptr);
 
-    //geters
+    //Geters
     QVariantList students()const{return m_students;}
     QVariantMap selectedStudent()const {return m_selectedStudent;}
     QVariantList changelogs()const{return m_changelong;}

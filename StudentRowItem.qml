@@ -20,7 +20,6 @@ Rectangle{
     property int itemIndex: 0
     signal inspectClicked(int studentId)
 
-
     //full-card click area
     MouseArea{
         id: mouseArea
@@ -96,11 +95,12 @@ Rectangle{
                 font.pixelSize: 13
                 elide: Text.ElideRight
                 width: parent.width
+                color: "#f8fafc"
             }
             Text{
                 text: "ID: #"+(root.studentData.id || "")
                 font.pixelSize: 10
-                color: "#647486"
+                color: "#f8fafc"
             }
         }
 
